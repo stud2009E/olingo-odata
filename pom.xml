@@ -30,7 +30,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>org.apache.olingo</groupId>
+            <artifactId>odata-client-core</artifactId>
+            <version>${odata.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.olingo</groupId>
             <artifactId>odata-parent</artifactId>

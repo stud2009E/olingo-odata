@@ -48,7 +48,7 @@ public class DemoEntityCollectionProcessor implements EntityCollectionProcessor 
 
     private OData odata;
     private ServiceMetadata serviceMetadata;
-    private Storage storage;
+    private final Storage storage;
 
     public DemoEntityCollectionProcessor(Storage storage) {
         this.storage = storage;

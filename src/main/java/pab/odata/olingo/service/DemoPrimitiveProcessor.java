@@ -44,7 +44,7 @@ import java.util.Locale;
 public class DemoPrimitiveProcessor implements PrimitiveProcessor {
 
     private OData odata;
-    private Storage storage;
+    private final Storage storage;
     private ServiceMetadata serviceMetadata;
 
     public DemoPrimitiveProcessor(Storage storage) {

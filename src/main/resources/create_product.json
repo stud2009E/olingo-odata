@@ -1,0 +1,6 @@
+{
+  "@odata.context":"$metadata#Products/$entity",
+  "ID":4,
+  "Name":"Gamer Mouse",
+  "Description":"optical mouse - gamer edition"
+}
