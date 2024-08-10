@@ -36,71 +36,20 @@
     <dependencies>
         <dependency>
             <groupId>com.sap.olingo</groupId>
-            <artifactId>odata-jpa-metadata</artifactId>
-            <version>${odata.jpa.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sap.olingo</groupId>
-            <artifactId>odata-jpa-annotation</artifactId>
-            <version>${odata.jpa.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sap.olingo</groupId>
-            <artifactId>odata-jpa-odata-vocabularies</artifactId>
-            <version>${odata.jpa.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sap.olingo</groupId>
             <artifactId>odata-jpa-processor</artifactId>
             <version>${odata.jpa.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.sap.olingo</groupId>
-            <artifactId>odata-jpa-processor-cb</artifactId>
-            <version>${odata.jpa.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sap.olingo</groupId>
-            <artifactId>odata-jpa-processor-ext</artifactId>
-            <version>${odata.jpa.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sap.olingo</groupId>
-            <artifactId>odata-jpa-processor-parallel</artifactId>
-            <version>${odata.jpa.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sap.olingo</groupId>
-            <artifactId>odata-jpa-spring-support</artifactId>
-            <version>${odata.jpa.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sap.olingo</groupId>
-            <artifactId>odata-jpa-vocabularies</artifactId>
-            <version>${odata.jpa.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sap.olingo</groupId>
-            <artifactId>odata-jpa-test</artifactId>
-            <version>${odata.jpa.version}</version>
-        </dependency>
-
-
-
-
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.apache.olingo</groupId>
-            <artifactId>odata-client-core</artifactId>
-            <version>${odata.version}</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
         <dependency>
@@ -111,29 +60,8 @@
         </dependency>
 
         <dependency>
-            <groupId>org.apache.olingo</groupId>
-            <artifactId>odata-commons-api</artifactId>
-            <version>${odata.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.olingo</groupId>
-            <artifactId>odata-commons-core</artifactId>
-            <version>${odata.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.olingo</groupId>
-            <artifactId>odata-server-core</artifactId>
-            <version>${odata.version}</version>
-            <scope>runtime</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.olingo</groupId>
-            <artifactId>odata-server-api</artifactId>
-            <version>${odata.version}</version>
-            <scope>compile</scope>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
         </dependency>
 
         <dependency>
@@ -141,6 +69,11 @@
             <artifactId>junit</artifactId>
             <version>3.8.1</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.persistence</groupId>
+            <artifactId>jakarta.persistence-api</artifactId>
+            <version>3.1.0</version>
         </dependency>
     </dependencies>
 
