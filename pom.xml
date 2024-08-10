@@ -19,9 +19,76 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <odata.version>5.0.0</odata.version>
+        <odata.jpa.version>2.1.1</odata.jpa.version>
     </properties>
 
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.sap.olingo</groupId>
+                <artifactId>odata-jpa</artifactId>
+                <version>${odata.jpa.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
+        <dependency>
+            <groupId>com.sap.olingo</groupId>
+            <artifactId>odata-jpa-metadata</artifactId>
+            <version>${odata.jpa.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sap.olingo</groupId>
+            <artifactId>odata-jpa-annotation</artifactId>
+            <version>${odata.jpa.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sap.olingo</groupId>
+            <artifactId>odata-jpa-odata-vocabularies</artifactId>
+            <version>${odata.jpa.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sap.olingo</groupId>
+            <artifactId>odata-jpa-processor</artifactId>
+            <version>${odata.jpa.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sap.olingo</groupId>
+            <artifactId>odata-jpa-processor-cb</artifactId>
+            <version>${odata.jpa.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sap.olingo</groupId>
+            <artifactId>odata-jpa-processor-ext</artifactId>
+            <version>${odata.jpa.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sap.olingo</groupId>
+            <artifactId>odata-jpa-processor-parallel</artifactId>
+            <version>${odata.jpa.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sap.olingo</groupId>
+            <artifactId>odata-jpa-spring-support</artifactId>
+            <version>${odata.jpa.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sap.olingo</groupId>
+            <artifactId>odata-jpa-vocabularies</artifactId>
+            <version>${odata.jpa.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sap.olingo</groupId>
+            <artifactId>odata-jpa-test</artifactId>
+            <version>${odata.jpa.version}</version>
+        </dependency>
+
+
+
+
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -35,6 +102,7 @@
             <artifactId>odata-client-core</artifactId>
             <version>${odata.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.apache.olingo</groupId>
             <artifactId>odata-parent</artifactId>
