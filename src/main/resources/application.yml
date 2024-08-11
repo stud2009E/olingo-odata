@@ -6,3 +6,6 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: create-drop
+  datasource:
+    url: jdbc:hsqldb:mem:odata_jpa
+    driver-class-name: org.hsqldb.jdbcDriver
