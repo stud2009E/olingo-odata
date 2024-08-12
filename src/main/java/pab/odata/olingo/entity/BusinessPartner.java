@@ -1,6 +1,7 @@
 package pab.odata.olingo.entity;
 
 import jakarta.persistence.*;
+import pab.odata.olingo.entity.vocabulary.ABCClassification;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

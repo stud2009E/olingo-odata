@@ -8,6 +8,7 @@
         <class>pab.odata.olingo.entity.BusinessPartnerRole</class>
         <class>pab.odata.olingo.entity.Company</class>
         <class>pab.odata.olingo.entity.Person</class>
+        <class>pab.odata.olingo.entity.vocabulary.ABCClassification</class>
         <properties>
             <property name="javax.persistence.validation.mode" value="NONE"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:odata_jpa"/>

@@ -29,12 +29,13 @@ public class AppController {
 
         try {
             EntityManagerFactory emf = JPAEntityManagerFactory.getEntityManagerFactory(P_UNIT_NAME, new HashMap<String, Object>());
-
-            JPAEdmProvider metadataProvider = new JPAEdmProvider(P_UNIT_NAME, emf, null, null);
-
+            JPAEdmProvider metadataProvider = new JPAEdmProvider(P_UNIT_NAME, emf, null,
+                    new String[]{"pab.odata.olingo.entity.vocabulary"});
             OData odata = OData.newInstance();
+
             ServiceMetadata edm = odata.createServiceMetadata(metadataProvider, new ArrayList<EdmxReference>());
             ODataHttpHandler handler = odata.createHandler(edm);
+
 
             handler.process(req, resp);
         } catch (RuntimeException | ODataException e) {
