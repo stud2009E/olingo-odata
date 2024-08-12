@@ -1,2 +1,19 @@
 server:
   port: 8081
+
+odata:
+  jpa:
+    punit-name: Tutorial
+    root-packages: pab.odata.olingo.entity, pab.odata.olingo.entity.vocabulary
+    mapping-path: /demo/service.svc
+
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    url: jdbc:postgresql://localhost:5432/odata_jpa
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
