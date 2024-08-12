@@ -6,6 +6,8 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>pab.odata.olingo.entity.BusinessPartner</class>
         <class>pab.odata.olingo.entity.BusinessPartnerRole</class>
+        <class>pab.odata.olingo.entity.Company</class>
+        <class>pab.odata.olingo.entity.Person</class>
         <properties>
             <property name="javax.persistence.validation.mode" value="NONE"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:odata_jpa"/>

@@ -2,16 +2,18 @@ package pab.odata.olingo.entity;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Collection;
 
 /**
  * Entity implementation class for Entity: BusinessPartner
  */
+@Inheritance
+@DiscriminatorColumn(name = "Type")
 @Entity(name = "BusinessPartner")
 @Table(name = "BusinessPartner")
-public class BusinessPartner {
-
+public abstract class BusinessPartner implements Serializable {
     @Id
     @Column(length = 32)
     private String iD;
