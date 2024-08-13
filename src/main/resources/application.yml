@@ -8,8 +8,12 @@ odata:
     mapping-path: /demo/service.svc
 
 spring:
+  sql:
+    init:
+      mode: always
   jpa:
     show-sql: true
+    defer-datasource-initialization: true
     hibernate:
       ddl-auto: create-drop
   datasource:
