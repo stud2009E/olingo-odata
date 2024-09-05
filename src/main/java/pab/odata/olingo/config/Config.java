@@ -3,7 +3,6 @@ package pab.odata.olingo.config;
 import com.sap.olingo.jpa.processor.core.api.JPAODataRequestContext;
 import com.sap.olingo.jpa.processor.core.api.JPAODataServiceContext;
 import com.sap.olingo.jpa.processor.core.api.JPAODataSessionContextAccess;
-import com.sap.olingo.jpa.processor.core.api.example.JPAExampleCUDRequestHandler;
 import jakarta.persistence.EntityManagerFactory;
 import org.apache.olingo.commons.api.ex.ODataException;
 import org.apache.olingo.server.api.debug.DefaultDebugSupport;
@@ -11,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import pab.odata.olingo.handler.BaseCUDRequestHandler;
 
 import javax.sql.DataSource;
 
@@ -26,10 +26,10 @@ public class Config {
     String mappingPath;
 
     @Bean
-    public JPAODataRequestContext requestContext() {
+    public JPAODataRequestContext requestContext(BaseCUDRequestHandler requestHandler) {
 
         return JPAODataRequestContext.with()
-                .setCUDRequestHandler(new JPAExampleCUDRequestHandler())
+                .setCUDRequestHandler(requestHandler)
                 .setDebugSupport(new DefaultDebugSupport())
                 .build();
     }
