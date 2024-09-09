@@ -1,0 +1,5 @@
+odata:
+  jpa:
+    punit-name: Tutorial
+    root-packages: pab.odata.olingo.entity
+    mapping-path: /demo/service.svc
