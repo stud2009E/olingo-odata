@@ -37,4 +37,14 @@ public class CategoryControllerImpl extends BaseODataController implements Categ
     public void create(HttpServletRequest request, HttpServletResponse response) {
         super.process(request, response);
     }
+
+    @Override
+    public void sum(HttpServletRequest request, HttpServletResponse response) {
+        super.process(request, response);
+    }
+
+    @Override
+    public void pow(HttpServletRequest request, HttpServletResponse response) {
+        super.process(request, response);
+    }
 }

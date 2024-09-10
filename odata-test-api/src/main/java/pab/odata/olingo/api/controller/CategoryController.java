@@ -86,4 +86,24 @@ public interface CategoryController {
             )
     )
     void create(HttpServletRequest request, HttpServletResponse response);
+
+
+    @GetMapping(path = "/Sum(Num1={a},Num2={b})")
+    @Operation(summary = "sum numbers",
+            parameters = {
+                    @Parameter(name = "a", required = true, in = ParameterIn.PATH),
+                    @Parameter(name = "b", required = true, in = ParameterIn.PATH)
+            }
+    )
+    void sum(HttpServletRequest request, HttpServletResponse response);
+
+
+    @GetMapping(path = "/Pow(Num1={a},Num2={b})")
+    @Operation(summary = "sum numbers",
+            parameters = {
+                    @Parameter(name = "a", required = true, in = ParameterIn.PATH),
+                    @Parameter(name = "b", required = true, in = ParameterIn.PATH)
+            }
+    )
+    void pow(HttpServletRequest request, HttpServletResponse response);
 }
