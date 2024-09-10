@@ -22,11 +22,17 @@ public class Product {
     @Column(name = "unit_price", nullable = false)
     private double unitPrice;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(nullable = false, name = "category_id", insertable = true, updatable = false)
+    @Column(name = "category_id", nullable = false)
+    private Long categoryId;
+
+    @Column(name = "supplier_id", nullable = false)
+    private Long supplierId;
+
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(nullable = false, name = "category_id", referencedColumnName = "id", updatable = false, insertable = false)
     private Category category;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(nullable = false, name = "supplier_id", insertable = true, updatable = false)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(nullable = false, name = "supplier_id", referencedColumnName = "id", updatable = false, insertable = false)
     private Supplier supplier;
 }

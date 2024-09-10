@@ -26,10 +26,9 @@ public class Config {
     String mappingPath;
 
     @Bean
-    public JPAODataRequestContext requestContext(BaseCUDRequestHandler requestHandler) {
-
+    public JPAODataRequestContext requestContext() {
         return JPAODataRequestContext.with()
-                .setCUDRequestHandler(requestHandler)
+                .setCUDRequestHandler(new BaseCUDRequestHandler())
                 .setDebugSupport(new DefaultDebugSupport())
                 .build();
     }

@@ -1,0 +1,77 @@
+[1mdiff --git a/odata-test-base/pom.xml b/odata-test-base/pom.xml[m
+[1mindex 513d8c3..ab590ec 100644[m
+[1m--- a/odata-test-base/pom.xml[m
+[1m+++ b/odata-test-base/pom.xml[m
+[36m@@ -35,10 +35,6 @@[m
+             <artifactId>odata-jpa-processor</artifactId>[m
+             <version>${odata.jpa.version}</version>[m
+         </dependency>[m
+[31m-        <dependency>[m
+[31m-            <groupId>org.hsqldb</groupId>[m
+[31m-            <artifactId>hsqldb</artifactId>[m
+[31m-        </dependency>[m
+         <dependency>[m
+             <groupId>org.postgresql</groupId>[m
+             <artifactId>postgresql</artifactId>[m
+[1mdiff --git a/odata-test-base/src/main/java/pab/odata/olingo/base/config/Config.java b/odata-test-base/src/main/java/pab/odata/olingo/base/config/Config.java[m
+[1mindex 762575f..9a610aa 100644[m
+[1m--- a/odata-test-base/src/main/java/pab/odata/olingo/base/config/Config.java[m
+[1m+++ b/odata-test-base/src/main/java/pab/odata/olingo/base/config/Config.java[m
+[36m@@ -26,10 +26,9 @@[m [mpublic class Config {[m
+     String mappingPath;[m
+ [m
+     @Bean[m
+[31m-    public JPAODataRequestContext requestContext(BaseCUDRequestHandler requestHandler) {[m
+[31m-[m
+[32m+[m[32m    public JPAODataRequestContext requestContext() {[m
+         return JPAODataRequestContext.with()[m
+[31m-                .setCUDRequestHandler(requestHandler)[m
+[32m+[m[32m                .setCUDRequestHandler(new BaseCUDRequestHandler())[m
+                 .setDebugSupport(new DefaultDebugSupport())[m
+                 .build();[m
+     }[m
+[1mdiff --git a/odata-test-base/src/main/java/pab/odata/olingo/base/entity/Category.java b/odata-test-base/src/main/java/pab/odata/olingo/base/entity/Category.java[m
+[1mindex b8245e9..b19da3e 100644[m
+[1m--- a/odata-test-base/src/main/java/pab/odata/olingo/base/entity/Category.java[m
+[1m+++ b/odata-test-base/src/main/java/pab/odata/olingo/base/entity/Category.java[m
+[36m@@ -1,8 +1,10 @@[m
+ package pab.odata.olingo.base.entity;[m
+ [m
+[32m+[m[32mimport com.sap.olingo.jpa.metadata.core.edm.annotation.EdmTransient;[m
+ import jakarta.persistence.*;[m
+ import lombok.Data;[m
+ import lombok.NoArgsConstructor;[m
+[32m+[m[32mimport pab.odata.olingo.base.entity.calculation.CategoryProductCount;[m
+ [m
+ import java.util.Set;[m
+ [m
+[36m@@ -24,6 +26,9 @@[m [mpublic class Category {[m
+     @Column(name = "description", nullable = false)[m
+     private String description;[m
+ [m
+[32m+[m[32m    @EdmTransient(requiredAttributes = "id", calculator = CategoryProductCount.class)[m
+[32m+[m[32m    private Long productCount;[m
+[32m+[m
+     @OneToMany(mappedBy = "category", orphanRemoval = true)[m
+     private Set<Product> products;[m
+ }[m
+[1mdiff --git a/pom.xml b/pom.xml[m
+[1mindex cee7e4f..959b7b2 100644[m
+[1m--- a/pom.xml[m
+[1m+++ b/pom.xml[m
+[36m@@ -26,8 +26,6 @@[m
+ [m
+ [m
+     <dependencies>[m
+[31m-[m
+[31m-[m
+         <dependency>[m
+             <groupId>org.springframework.boot</groupId>[m
+             <artifactId>spring-boot-starter-web</artifactId>[m
+[36m@@ -58,6 +56,5 @@[m
+                 <artifactId>maven-compiler-plugin</artifactId>[m
+             </plugin>[m
+         </plugins>[m
+[31m-[m
+     </build>[m
+ </project>[m

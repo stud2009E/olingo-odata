@@ -11,7 +11,10 @@ import org.apache.olingo.commons.api.http.HttpStatusCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import pab.odata.olingo.base.entity.Category;
+import pab.odata.olingo.base.entity.Product;
 import pab.odata.olingo.base.repository.CategoryRepository;
+
+import java.util.Set;
 
 @Component
 @HandlesTypes(Category.class)

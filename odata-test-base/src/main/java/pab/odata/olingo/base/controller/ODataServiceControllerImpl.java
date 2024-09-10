@@ -14,7 +14,13 @@ public class ODataServiceControllerImpl extends BaseODataController implements O
     }
 
     @Override
+    public void atom(HttpServletRequest request, HttpServletResponse response) {
+        super.process(request, response);
+    }
+
+    @Override
     public void batch(HttpServletRequest request, HttpServletResponse response) {
         super.process(request, response);
     }
+
 }

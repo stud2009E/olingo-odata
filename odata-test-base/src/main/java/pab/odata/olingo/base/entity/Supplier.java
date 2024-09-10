@@ -14,7 +14,7 @@ import java.util.Set;
 public class Supplier {
 
     @Id
-    @Column(insertable = false, updatable = false)
+    @Column(name = "id", insertable = false, updatable = false)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "supplier_gen_from_100")
     @SequenceGenerator(name = "supplier_gen_from_100", sequenceName = "supplier_seq", initialValue = 100)
     private Long id;
@@ -29,5 +29,5 @@ public class Supplier {
     private String contact;
 
     @OneToMany(mappedBy = "supplier", orphanRemoval = true)
-    Set<Product> products = new HashSet<>();
+    Set<Product> products;
 }
