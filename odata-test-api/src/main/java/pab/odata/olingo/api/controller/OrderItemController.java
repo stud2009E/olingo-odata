@@ -44,7 +44,7 @@ public interface OrderItemController extends CommonOperationController {
 
 
     @GetMapping("/OrderItems")
-    @Operation(summary = "get OrderItems",
+    @Operation(summary = "get order items",
             parameters = {
                     @Parameter(name = "$top"),
                     @Parameter(name = "$skip"),

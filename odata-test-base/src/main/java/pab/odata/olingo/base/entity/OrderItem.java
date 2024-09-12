@@ -14,7 +14,7 @@ public class OrderItem {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "order_item_gen")
     @SequenceGenerator(name = "order_item_gen", sequenceName = "order_item_seq", initialValue = 1)
-    private Long Id;
+    private Long id;
 
     @NotNull
     @Column(name = "order_id", nullable = false, updatable = false)

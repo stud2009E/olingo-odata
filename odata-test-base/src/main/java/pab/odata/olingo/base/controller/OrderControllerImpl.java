@@ -8,4 +8,35 @@ import pab.odata.olingo.base.controller.common.CommonODataController;
 
 @RestController
 public class OrderControllerImpl extends CommonODataController implements OrderController {
+
+    @Override
+    public void getOne(HttpServletRequest request, HttpServletResponse response) {
+        process(request, response);
+    }
+
+    @Override
+    public void getSet(HttpServletRequest request, HttpServletResponse response) {
+        process(request, response);
+    }
+
+    @Override
+    public void delete(HttpServletRequest request, HttpServletResponse response) {
+        process(request, response);
+    }
+
+    @Override
+    public void patch(HttpServletRequest request, HttpServletResponse response) {
+        process(request, response);
+    }
+
+    @Override
+    public void create(HttpServletRequest request, HttpServletResponse response) {
+        process(request, response);
+    }
+
+    @Override
+    public void getByAssoc(HttpServletRequest request, HttpServletResponse response) {
+        process(request, response);
+    }
+
 }

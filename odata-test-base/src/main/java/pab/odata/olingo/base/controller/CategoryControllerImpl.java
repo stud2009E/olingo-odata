@@ -9,4 +9,33 @@ import pab.odata.olingo.base.controller.common.CommonODataController;
 @RestController
 public class CategoryControllerImpl extends CommonODataController implements CategoryController {
 
+    @Override
+    public void getOne(HttpServletRequest request, HttpServletResponse response) {
+        process(request, response);
+    }
+
+    @Override
+    public void getSet(HttpServletRequest request, HttpServletResponse response) {
+        process(request, response);
+    }
+
+    @Override
+    public void delete(HttpServletRequest request, HttpServletResponse response) {
+        process(request, response);
+    }
+
+    @Override
+    public void patch(HttpServletRequest request, HttpServletResponse response) {
+        process(request, response);
+    }
+
+    @Override
+    public void create(HttpServletRequest request, HttpServletResponse response) {
+        process(request, response);
+    }
+
+    @Override
+    public void getByAssoc(HttpServletRequest request, HttpServletResponse response) {
+        process(request, response);
+    }
 }
