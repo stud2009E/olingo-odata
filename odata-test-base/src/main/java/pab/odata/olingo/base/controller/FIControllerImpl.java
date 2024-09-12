@@ -10,12 +10,17 @@ import pab.odata.olingo.base.controller.common.CommonODataController;
 public class FIControllerImpl extends CommonODataController implements FIController {
     @Override
     public void sum(HttpServletRequest request, HttpServletResponse response) {
-        super.process(request, response);
+        process(request, response);
     }
 
     @Override
     public void pow(HttpServletRequest request, HttpServletResponse response) {
-        super.process(request, response);
+        process(request, response);
+    }
+
+    @Override
+    public void orderToWork(HttpServletRequest request, HttpServletResponse response) {
+        process(request, response);
     }
 
 }

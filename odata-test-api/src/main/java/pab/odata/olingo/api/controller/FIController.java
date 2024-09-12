@@ -31,4 +31,13 @@ public interface FIController {
             }
     )
     void pow(HttpServletRequest request, HttpServletResponse response);
+
+
+    @GetMapping(path = "/OrderToWork(Id={orderId})")
+    @Operation(summary = "change order from draft to work status",
+            parameters = {
+                    @Parameter(name = "orderId", required = true, in = ParameterIn.PATH)
+            }
+    )
+    void orderToWork(HttpServletRequest request, HttpServletResponse response);
 }
