@@ -12,11 +12,12 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.web.bind.annotation.*;
+import pab.odata.olingo.api.controller.common.CommonOperationController;
 import pab.odata.olingo.api.dto.OrderItemDto;
 
 @RequestMapping(path = "${odata.jpa.mapping-path}")
 @Tag(name = "Order item", description = "order item entity")
-public interface OrderItemController {
+public interface OrderItemController extends CommonOperationController {
 
     @GetMapping(path = "/OrderItems({id})")
     @Operation(summary = "get order item by id",

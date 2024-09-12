@@ -3,11 +3,10 @@ package pab.odata.olingo.base.controller.common;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.web.bind.annotation.RestController;
-import pab.odata.olingo.api.controller.ODataServiceController;
-import pab.odata.olingo.base.controller.common.BaseODataController;
+import pab.odata.olingo.api.controller.common.ODataServiceController;
 
 @RestController
-public class ODataServiceControllerImpl extends BaseODataController implements ODataServiceController {
+public class ODataServiceControllerImpl extends CommonODataController implements ODataServiceController {
 
     @Override
     public void metadata(HttpServletRequest request, HttpServletResponse response) {

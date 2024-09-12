@@ -1,4 +1,4 @@
-package pab.odata.olingo.api.controller;
+package pab.odata.olingo.api.controller.common;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
