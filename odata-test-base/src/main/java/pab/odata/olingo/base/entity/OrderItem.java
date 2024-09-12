@@ -1,6 +1,8 @@
 package pab.odata.olingo.base.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -14,20 +16,19 @@ public class OrderItem {
     @SequenceGenerator(name = "order_item_gen", sequenceName = "order_item_seq", initialValue = 1)
     private Long Id;
 
-    @Column(name = "order_id", nullable = false)
+    @NotNull
+    @Column(name = "order_id", nullable = false, updatable = false)
     private Long orderId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "order_id", referencedColumnName = "id", nullable = false, updatable = false, insertable = false)
-    private Order order;
-
-    @Column(name = "product_id", nullable = false)
+    @NotNull
+    @Column(name = "product_id", nullable = false, updatable = false)
     private Long productId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id", referencedColumnName = "id", updatable = false, insertable = false)
     private Product product;
 
+    @Positive
     @Column(name = "quan", nullable = false)
     private Double quantity;
 }

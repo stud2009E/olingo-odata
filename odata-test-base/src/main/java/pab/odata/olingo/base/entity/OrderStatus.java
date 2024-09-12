@@ -4,7 +4,7 @@ import com.sap.olingo.jpa.metadata.core.edm.annotation.EdmEnumeration;
 
 @EdmEnumeration()
 public enum OrderStatus {
-    NEW,
+    DRAFT,
     REJECT,
     PROCESS,
     DELIVERY,

@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import pab.odata.olingo.base.entity.calculation.CategoryProductCount;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity(name = "Category")
@@ -30,5 +31,5 @@ public class Category {
     private Long productCount;
 
     @OneToMany(mappedBy = "category", orphanRemoval = true)
-    private Set<Product> products;
+    private Set<Product> products = new HashSet<>();
 }

@@ -1,33 +1,42 @@
 package pab.odata.olingo.base.entity;
 
+import jakarta.annotation.Nonnull;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
+import jakarta.validation.constraints.PastOrPresent;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-import java.util.List;
+import java.time.OffsetDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity(name = "Order")
 @Table(name = "orders")
 @Data
-@AllArgsConstructor
+@NoArgsConstructor
 public class Order {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "order_gen")
-    @SequenceGenerator(name="order_gen", sequenceName = "order_seq", initialValue = 1)
+    @SequenceGenerator(name = "order_gen", sequenceName = "order_seq", initialValue = 1)
     private Long Id;
 
+    @Nonnull
     @Column(name = "status")
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
 
-    @Column(name="created_at")
-    private LocalDateTime createdAt;
+    @Nonnull
+    @Column(name = "created_at")
+    @PastOrPresent
+    private OffsetDateTime createdAt;
 
-    @Column(name="changed_at")
-    private LocalDateTime changedAt;
+    @Nonnull
+    @Column(name = "changed_at")
+    @PastOrPresent
+    private OffsetDateTime changedAt;
 
-    @OneToMany(mappedBy = "order")
-    private List<OrderItem> items;
+    @OneToMany(orphanRemoval = true, cascade = CascadeType.ALL)
+    @JoinColumn(name = "order_id", referencedColumnName = "id")
+    private Set<OrderItem> items = new HashSet<>();
 }

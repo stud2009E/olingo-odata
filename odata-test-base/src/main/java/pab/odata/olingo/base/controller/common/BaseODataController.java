@@ -1,4 +1,4 @@
-package pab.odata.olingo.base.controller;
+package pab.odata.olingo.base.controller.common;
 
 import com.sap.olingo.jpa.processor.core.api.JPAODataRequestContext;
 import com.sap.olingo.jpa.processor.core.api.JPAODataRequestHandler;

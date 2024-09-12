@@ -5,8 +5,14 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class CategoryRequestDto {
+public class ProductDto {
+    private Long Id;
+
     private String name;
 
-    private String description;
+    private double unitPrice;
+
+    private Long categoryId;
+
+    private Long supplierId;
 }

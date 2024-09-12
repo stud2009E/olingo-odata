@@ -29,5 +29,5 @@ public class Supplier {
     private String contact;
 
     @OneToMany(mappedBy = "supplier", orphanRemoval = true)
-    Set<Product> products;
+    Set<Product> products = new HashSet<>();
 }

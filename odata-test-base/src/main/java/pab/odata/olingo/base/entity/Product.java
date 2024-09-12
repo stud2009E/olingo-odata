@@ -28,11 +28,11 @@ public class Product {
     @Column(name = "supplier_id", nullable = false)
     private Long supplierId;
 
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(nullable = false, name = "category_id", referencedColumnName = "id", updatable = false, insertable = false)
     private Category category;
 
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(nullable = false, name = "supplier_id", referencedColumnName = "id", updatable = false, insertable = false)
     private Supplier supplier;
 }

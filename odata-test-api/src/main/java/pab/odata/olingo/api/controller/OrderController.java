@@ -10,15 +10,14 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.web.bind.annotation.*;
-import pab.odata.olingo.api.dto.CategoryDto;
-import pab.odata.olingo.api.dto.IdDto;
+import pab.odata.olingo.api.dto.OrderDto;
 
 @RequestMapping(path = "${odata.jpa.mapping-path}")
-@Tag(name = "Category", description = "Category entity")
-public interface CategoryController {
+@Tag(name = "Order", description = "order entity")
+public interface OrderController {
 
-    @GetMapping(path = "/Categories({id})")
-    @Operation(summary = "get category by id",
+    @GetMapping(path = "/Orders({id})")
+    @Operation(summary = "get order by id",
             parameters = {
                     @Parameter(name = "id", required = true, in = ParameterIn.PATH),
                     @Parameter(name = "$select"),
@@ -28,8 +27,8 @@ public interface CategoryController {
     void getOne(HttpServletRequest request, HttpServletResponse response);
 
 
-    @GetMapping("/Categories")
-    @Operation(summary = "get categories",
+    @GetMapping("/Orders")
+    @Operation(summary = "get Orders",
             parameters = {
                     @Parameter(name = "$top"),
                     @Parameter(name = "$skip"),
@@ -42,9 +41,8 @@ public interface CategoryController {
     )
     void getSet(HttpServletRequest request, HttpServletResponse response);
 
-
-    @GetMapping(path = "/Categories({id})/Products")
-    @Operation(summary = "get products by category",
+    @GetMapping(path = "/Orders({id})/Items")
+    @Operation(summary = "get order items",
             parameters = {
                     @Parameter(name = "id", required = true, in = ParameterIn.PATH),
                     @Parameter(name = "$top"),
@@ -59,8 +57,8 @@ public interface CategoryController {
     void getByAssoc(HttpServletRequest request, HttpServletResponse response);
 
 
-    @DeleteMapping(path = "/Categories({id})")
-    @Operation(summary = "delete category",
+    @DeleteMapping(path = "/Orders({id})")
+    @Operation(summary = "delete order",
             parameters = {
                     @Parameter(name = "id", required = true, in = ParameterIn.PATH)
             }
@@ -68,28 +66,22 @@ public interface CategoryController {
     void delete(HttpServletRequest request, HttpServletResponse response);
 
 
-    @PatchMapping(path = "/Categories({id})")
-    @Operation(summary = "update category",
+    @PatchMapping(path = "/Orders({id})")
+    @Operation(summary = "update order",
             parameters = {
                     @Parameter(name = "id", required = true, in = ParameterIn.PATH)
             },
             requestBody = @RequestBody(required = true,
-                    content = {
-                            @Content(
-                                    contentSchema = @Schema(
-                                            implementation = CategoryDto.class
-                                    )
-                            )
-                    }
+                    content = @Content(contentSchema = @Schema(implementation = OrderDto.class))
             )
     )
     void patch(HttpServletRequest request, HttpServletResponse response);
 
 
-    @PostMapping(path = "/Categories")
-    @Operation(summary = "create category",
+    @PostMapping(path = "/Orders")
+    @Operation(summary = "create order",
             requestBody = @RequestBody(required = true,
-                    content = @Content(schema = @Schema(implementation = CategoryDto.class))
+                    content = @Content(schema = @Schema(implementation = OrderDto.class))
             )
     )
     void create(HttpServletRequest request, HttpServletResponse response);
